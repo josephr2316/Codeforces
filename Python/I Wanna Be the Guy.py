@@ -5,8 +5,12 @@ if __name__ == '__main__':
     p1 = p1[1:]
     p2 = [int(x) for x in input().split()]
     p2 = p2[1:]
-    set_result = list(set(p1 + p2))
-    if level is len(set_result):
+    set_result = p1 + p2
+    count = 0;
+    for lev in range(level + 1):
+        if lev in set_result:
+            count += 1;
+    if count is level:
         print("I become the guy.")
     else:
         print("Oh, my keyboard!")
