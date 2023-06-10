@@ -1,5 +1,7 @@
 # 	80A - Panoramix's Prediction
 def prime_number(number):
+    if number == 1 or number == 0 :
+        return False
     for x in range(2,number):
         if number % x == 0:
             return False
