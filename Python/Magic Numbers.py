@@ -2,21 +2,17 @@
 if __name__ == '__main__' :
     n = input()
     i = 0
-    magic = ''
+    magic = True
 
     while i < len(n) :
-        if  n[i:i+3] != '144' :
-            if  n[i:i+2] != '14' :
-                if n[1] == '1':
-                    magic+= '1'
-            else :
-                magic += '14'
-                i+= 1
-        else:
+        if i + 3 <= len(n) and n[i:i+3] == '144'   :
+            i += 3
+        elif i+2<= len(n) and n[i:i+2] == '14':
             i += 2
-            magic += '144'
-        i+= 1
-    if len(n) == len(magic) :
-        print('YES')
-    else :
-        print('NO')
+        elif n[i] == '1' :
+           i += 1
+        else :
+            magic = False
+            break
+    if magic : print('YES')
+    else : print('NO')
